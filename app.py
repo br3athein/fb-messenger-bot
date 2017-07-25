@@ -39,7 +39,11 @@ def webhook():
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
 
-                    send_message(sender_id, "roger that!")
+                    reply_text = "roger that!"
+                    if message_text == "What's up?":
+                        reply_text = "Thanks god, I'm not on Odoo!!"
+                        
+                    send_message(sender_id, reply_text)
 
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
