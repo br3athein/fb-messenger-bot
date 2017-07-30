@@ -42,7 +42,7 @@ def webhook():
                     reply_text = "roger that!"
                     if message_text == "What's up?":
                         reply_text = "Thanks god, I'm not on Odoo!!"
-                        
+
                     send_message(sender_id, reply_text)
 
                 if messaging_event.get("delivery"):  # delivery confirmation
